@@ -1,3 +1,37 @@
-<p>
-  project-detail works!
-</p>
+<div *ngIf="project">
+  <div class="row">
+    <div class="thumbnail col-md-6">
+      <img class="img-rounded img-responsive" [src]="project.imageUrl" [alt]="project.name + ' image'">
+      <div class="caption">
+        <h4>{{project.name}}</h4>
+
+
+        <p class="well">
+          {{project.description}}
+        </p>
+
+        <br>
+        <strong>
+          Active: {{project.isActive ? "Yes": "No"}}
+        </strong>
+        <br>
+
+        <strong>
+          Contract Signed: {{project.contractSignedOn | date: 'MM.dd.yyyy'}}
+        </strong>
+        <br>
+
+        <strong>
+          Budget: {{project.budget | currency: 'USD': "symbol": "3.0-2"}}
+        </strong>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <a class="btn btn-default" [routerLink]="['/projects', (project.id + 1)]">
+        Next
+      </a>
+    </div>
+  </div>
+</div>

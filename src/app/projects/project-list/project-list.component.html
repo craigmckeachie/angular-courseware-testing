@@ -1,3 +1,13 @@
-<p>
-  project-list works!
-</p>
+<div *ngIf="errorMessage" class="alert alert-danger">
+  {{errorMessage}}
+</div>
+
+<div class="col-xs-18 col-sm-6 col-md-3" *ngFor="let project of projects">
+
+  <app-project-card [project]="project" *ngIf="!project.editing" (edit)="onEdit($event)" (delete)="onDelete($event)">
+  </app-project-card>
+
+  <app-project-form [project]="project" *ngIf="project.editing" (cancel)="onCancel($event)" (save)="onSave($event)">
+  </app-project-form>
+
+</div>

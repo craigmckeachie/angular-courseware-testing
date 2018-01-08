@@ -1,5 +1,6 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
+import { ReactiveFormsModule } from "@angular/forms";
 
 import { ProjectsRoutingModule } from "./projects-routing.module";
 import { ProjectListComponent } from "./project-list/project-list.component";
@@ -9,7 +10,7 @@ import { ProjectDetailComponent } from "./project-detail/project-detail.componen
 import { ProjectService } from "./shared/project.service";
 
 @NgModule({
-  imports: [CommonModule, ProjectsRoutingModule],
+  imports: [CommonModule, ReactiveFormsModule, ProjectsRoutingModule],
   declarations: [
     ProjectListComponent,
     ProjectCardComponent,

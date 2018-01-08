@@ -1,3 +1,38 @@
-<p>
-  project-card works!
-</p>
+<div class="project-detail">
+  <div class="thumbnail">
+    <img class="img-rounded img-responsive" (click)="onSelect(project, $event)" [src]="project.imageUrl" [alt]="project.name + ' image'">
+
+    <div class="caption">
+      <h4 (click)="onSelect(project, $event)">{{project.name}}</h4>
+      <p (click)="onSelect(project, $event)"> {{project.description}}</p>
+      <div class="dropdown" [ngClass]="getDropdownCssClasses()">
+
+        <button (click)="toggleActions()" class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="true">
+          Actions
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+          <li>
+
+            <a href="#" (click)="onEdit(project, $event)">
+              <i class="fa fa-pencil" aria-hidden="true"></i>&nbsp; Edit
+            </a>
+          </li>
+          <li role="separator" class="divider"></li>
+          <li>
+            <a href="#">
+              <i class="fa fa-archive"></i>&nbsp; Archive
+            </a>
+          </li>
+          <li>
+            <a href="#" (click)="onDelete(project, $event)">
+              <i class="fa fa-trash-o"></i>&nbsp; Delete
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</div>
