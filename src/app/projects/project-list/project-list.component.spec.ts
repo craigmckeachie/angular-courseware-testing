@@ -6,11 +6,10 @@ import { ProjectService } from "../shared/project.service";
 import { DebugElement } from "@angular/core";
 import Spy = jasmine.Spy;
 import { of } from "rxjs/observable/of";
-import { Project } from "../shared/project.model";
-import { Observable } from "rxjs/Observable";
 import { ReactiveFormsModule } from "@angular/forms";
 import { ProjectsModule } from "../projects.module";
 import { NavigationExtras, Router } from "@angular/router";
+import { Project } from "../shared/project.model";
 
 export class RouterStub {
   navigate(commands: any[], extras?: NavigationExtras) {}

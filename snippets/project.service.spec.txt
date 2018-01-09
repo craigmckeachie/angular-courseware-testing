@@ -1,0 +1,39 @@
+import {
+    async, inject, TestBed
+} from '@angular/core/testing';
+
+import {
+    MockBackend,
+    MockConnection
+} from '@angular/http/testing';
+
+import {
+    HttpModule, Http, XHRBackend, Response, ResponseOptions
+} from '@angular/http';
+
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/observable/of';
+import 'rxjs/add/operator/catch';
+import 'rxjs/add/operator/do';
+import 'rxjs/add/operator/toPromise';
+
+import { Project } from './project.model';
+import { ProjectService } from './project.service';
+
+const makeProjectData = () => [
+    { id: 1, name: 'Windstorm' },
+    { id: 2, name: 'Bombasto' },
+    { id: 3, name: 'Magneta' },
+    { id: 4, name: 'Tornado' }
+] as Project[];
+
+
+describe('ProjectService', () => {
+
+    beforeEach(async(() => {
+
+    }));
+
+    //tests go here
+
+});
