@@ -8,7 +8,7 @@ import { Router } from "@angular/router";
   styleUrls: ["./project-card.component.css"]
 })
 export class ProjectCardComponent implements OnInit {
-  @Input() project: Project;
+  @Input() project = new Project();
   @Output() edit = new EventEmitter<Project>();
   @Output() delete = new EventEmitter<Project>();
   actionDropdownIsOpen = false;
