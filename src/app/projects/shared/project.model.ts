@@ -3,7 +3,7 @@ export class Project {
   name: string;
   description: string;
   editing: boolean;
-  imageUrl: string = "http://placehold.it/500x300/e4d2ba/";
+  imageUrl = "http://placehold.it/500x300/e4d2ba/";
   contractTypeId: number;
   isActive: boolean;
   contractSignedOn: Date;

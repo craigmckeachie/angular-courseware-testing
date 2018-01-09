@@ -1,4 +1,4 @@
-<div class="project-detail">
+<div class="project-detail" *ngIf="project">
   <div class="thumbnail">
     <img class="img-rounded img-responsive" (click)="onSelect(project, $event)" [src]="project.imageUrl" [alt]="project.name + ' image'">
 
