@@ -57,4 +57,18 @@ describe("ProjectCardComponent", () => {
       expectedProject.description
     );
   });
+
+  it("should raise edit event when edit clicked", () => {
+    let projectBeingEdited: Project;
+
+    component.edit.subscribe(
+      (project: Project) => (projectBeingEdited = project)
+    );
+
+    editAnchorDebugElement.triggerEventHandler("click", {
+      preventDefault: () => {}
+    });
+
+    expect(projectBeingEdited).toBe(expectedProject);
+  });
 });
