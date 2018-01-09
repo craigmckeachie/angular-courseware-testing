@@ -1,9 +1,19 @@
-import { async, ComponentFixture, TestBed } from "@angular/core/testing";
+import {
+  async,
+  ComponentFixture,
+  inject,
+  TestBed
+} from "@angular/core/testing";
 
 import { ProjectCardComponent } from "./project-card.component";
 import { DebugElement } from "@angular/core";
 import { By } from "@angular/platform-browser";
 import { Project } from "../shared/project.model";
+import { NavigationExtras, Router } from "@angular/router";
+
+export class RouterStub {
+  navigate(commands: any[], extras?: NavigationExtras) {}
+}
 
 describe("ProjectCardComponent", () => {
   let component: ProjectCardComponent;
@@ -17,7 +27,8 @@ describe("ProjectCardComponent", () => {
   beforeEach(
     async(() => {
       TestBed.configureTestingModule({
-        declarations: [ProjectCardComponent]
+        declarations: [ProjectCardComponent],
+        providers: [{ provide: Router, useClass: RouterStub }]
       }).compileComponents();
     })
   );
@@ -66,9 +77,19 @@ describe("ProjectCardComponent", () => {
     );
 
     editAnchorDebugElement.triggerEventHandler("click", {
-      preventDefault: () => {}
+      preventDefault: function() {}
     });
-
     expect(projectBeingEdited).toBe(expectedProject);
   });
+
+  it(
+    "should tell Router to navigate when project clicked",
+    inject([Router], (router: Router) => {
+      const navigateSpy = spyOn(router, "navigate");
+      headerElement.click();
+
+      const navigateArguments = navigateSpy.calls.first().args[0];
+      expect(navigateArguments).toEqual(["/projects", component.project.id]);
+    })
+  );
 });
