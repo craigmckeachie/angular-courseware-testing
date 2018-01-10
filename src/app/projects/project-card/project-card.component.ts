@@ -13,7 +13,7 @@ export class ProjectCardComponent implements OnInit {
   @Output() delete = new EventEmitter<Project>();
   actionDropdownIsOpen = false;
 
-  constructor(private router: Router) {}
+  // constructor(private router: Router) {}
 
   ngOnInit() {}
 
@@ -40,6 +40,6 @@ export class ProjectCardComponent implements OnInit {
 
   onSelect(project: Project, event) {
     event.preventDefault();
-    this.router.navigate(["/projects", project.id]);
+    // this.router.navigate(["/projects", project.id]);
   }
 }
