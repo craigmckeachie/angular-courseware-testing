@@ -7,7 +7,7 @@ describe("CharacterLengthPipe", () => {
     expect(pipe).toBeTruthy();
   });
 
-  it("truncates string at given lenght", () => {
+  it("truncates string at given length", () => {
     expect(pipe.transform("abc", 2)).toBe("ab");
   });
 
