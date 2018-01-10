@@ -1,0 +1,45 @@
+import {
+  TestBed,
+  ComponentFixture,
+  async,
+  fakeAsync,
+  tick
+} from "@angular/core/testing";
+import { DebugElement } from "@angular/core";
+import { ProjectListComponent } from "./project-list.component";
+import { ReactiveFormsModule } from "@angular/forms";
+import { ProjectsModule } from "../projects.module";
+import { ProjectService } from "../shared/project.service";
+import { HttpModule } from "@angular/http";
+
+import { Project } from "../shared/project.model";
+import { NavigationExtras, Router } from "@angular/router";
+import { Observable } from "rxjs/Observable";
+import { of } from "rxjs/observable/of";
+import { PROJECTS } from "../shared/mock-projects";
+
+export class FakeProjectService {
+  list(): Observable<Project[]> {
+    return of(PROJECTS);
+  }
+}
+
+export class RouterStub {
+  navigate(commands: any[], extras?: NavigationExtras) {}
+}
+
+describe("ProjectListComponent", () => {
+  let fixture: ComponentFixture<ProjectListComponent>;
+  let component: ProjectListComponent;
+  let debugElement: DebugElement;
+  let element: HTMLElement;
+
+  beforeEach(async(() => {}));
+
+  beforeEach(() => {
+    fixture = TestBed.createComponent(ProjectListComponent);
+    component = fixture.componentInstance;
+    debugElement = fixture.debugElement;
+    element = debugElement.nativeElement;
+  });
+});

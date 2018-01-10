@@ -10,20 +10,19 @@ import { Project } from "./project.model";
 const httpOptions = {
   headers: new HttpHeaders({ "Content-Type": "application/json" })
 };
+export const PROJECTS_URL = "http://localhost:3000/projects/";
 
 @Injectable()
 export class ProjectService {
-  private projectsUrl = "http://localhost:3000/projects/";
-
   constructor(private http: HttpClient) {}
 
   find(id: number): Observable<Project> {
-    const url = this.projectsUrl + id;
+    const url = PROJECTS_URL + id;
     return this.http.get<Project>(url);
   }
 
   list(): Observable<Project[]> {
-    return this.http.get<Project[]>(this.projectsUrl).pipe(
+    return this.http.get<Project[]>(PROJECTS_URL).pipe(
       catchError((error: HttpErrorResponse) => {
         console.error(error);
         return _throw("An error occurred loading the projects.");
@@ -32,7 +31,7 @@ export class ProjectService {
   }
 
   put(project: Project): Observable<Project> {
-    const url = this.projectsUrl + project.id;
+    const url = PROJECTS_URL + project.id;
     return this.http.put<Project>(url, project, httpOptions).pipe(
       catchError((error: HttpErrorResponse) => {
         console.error(error);
@@ -42,7 +41,7 @@ export class ProjectService {
   }
 
   delete(project: Project): Observable<Project> {
-    const url = this.projectsUrl + project.id;
+    const url = PROJECTS_URL + project.id;
     return this.http.delete<Project>(url, httpOptions).pipe(
       catchError((error: HttpErrorResponse) => {
         console.error(error);
