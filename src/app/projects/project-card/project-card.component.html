@@ -3,7 +3,7 @@
     <img class="img-rounded img-responsive" (click)="onSelect(project, $event)" [src]="project.imageUrl" [alt]="project.name + ' image'">
 
     <div class="caption">
-      <h4 (click)="onSelect(project, $event)">{{project.name}}</h4>
+      <h4 class="name" (click)="onSelect(project, $event)">{{project.name}}</h4>
       <p (click)="onSelect(project, $event)"> {{project.description}}</p>
       <div class="dropdown" [ngClass]="getDropdownCssClasses()">
 
