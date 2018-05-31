@@ -3,7 +3,7 @@
     {
       "imageUrl": "http://placehold.it/500x300/e4d2ba/",
       "id": 1,
-      "name": "updated project name",
+      "name": "Matdexons",
       "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere, soluta, eligendi doloribus sunt minus amet sit debitis repellat.",
       "contractTypeId": 2,
       "isActive": true,
@@ -58,7 +58,7 @@
       "imageUrl": "http://placehold.it/500x300/e4d2ba/",
       "id": 6,
       "name": "Scarlet Weeknight",
-      "description": "Fusce quis quam eget sapien sodales iaculis. Curabitur aliquet at erat sed cursus.",
+      "description": "Fusce quis quam eget sapien sodales iaculis. Curabitur aliquet at erat sed cursus. Curabitur aliquet at erat sed cursus.",
       "contractTypeId": 1,
       "isActive": true,
       "contractSignedOn": "2016-03-05T05:00:00.000Z",
