@@ -1,8 +1,7 @@
 import { Injectable } from "@angular/core";
-import { Observable } from "rxjs/Observable";
+import { Observable, throwError } from "rxjs";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { catchError, tap } from "rxjs/operators";
-import { _throw } from "rxjs/observable/throw";
 import { HttpErrorResponse } from "@angular/common/http";
 
 import { Project } from "./project.model";
@@ -25,7 +24,7 @@ export class ProjectService {
     return this.http.get<Project[]>(PROJECTS_URL).pipe(
       catchError((error: HttpErrorResponse) => {
         console.error(error);
-        return _throw("An error occurred loading the projects.");
+        return throwError("An error occurred loading the projects.");
       })
     );
   }
@@ -35,7 +34,7 @@ export class ProjectService {
     return this.http.put<Project>(url, project, httpOptions).pipe(
       catchError((error: HttpErrorResponse) => {
         console.error(error);
-        return _throw("An error occurred updating the project.");
+        return throwError("An error occurred updating the project.");
       })
     );
   }
@@ -45,7 +44,7 @@ export class ProjectService {
     return this.http.delete<Project>(url, httpOptions).pipe(
       catchError((error: HttpErrorResponse) => {
         console.error(error);
-        return _throw("An error occurred deleting the project.");
+        return throwError("An error occurred deleting the project.");
       })
     );
   }
