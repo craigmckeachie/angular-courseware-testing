@@ -1,16 +1,16 @@
-import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
-import { Project } from "../shared/project.model";
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Project } from '../shared/project.model';
 import {
   FormGroup,
   FormBuilder,
   Validators,
-  AbstractControl
-} from "@angular/forms";
+  AbstractControl,
+} from '@angular/forms';
 
 @Component({
-  selector: "app-project-form",
-  templateUrl: "./project-form.component.html",
-  styleUrls: ["./project-form.component.css"]
+  selector: 'app-project-form',
+  templateUrl: './project-form.component.html',
+  styleUrls: ['./project-form.component.css'],
 })
 export class ProjectFormComponent implements OnInit {
   @Input() project: Project;
@@ -24,18 +24,18 @@ export class ProjectFormComponent implements OnInit {
     this.projectForm = this.formBuilder.group({
       name: [this.project.name, [Validators.required, Validators.minLength(3)]],
       description: [this.project.description],
-      isActive: [this.project.isActive]
+      isActive: [this.project.isActive],
     });
   }
 
   validationMessages = {
     name: {
-      required: "Name is required.",
-      minlength: "Name must be at least 3 characters long."
+      required: 'Name is required.',
+      minlength: 'Name must be at least 3 characters long.',
     },
     description: {
-      required: "Description is required."
-    }
+      required: 'Description is required.',
+    },
   };
 
   hasAnyError(control: AbstractControl) {
