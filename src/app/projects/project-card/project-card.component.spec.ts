@@ -1,18 +1,16 @@
-// import { async, ComponentFixture, TestBed } from "@angular/core/testing";
+// import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-// import { ProjectCardComponent } from "./project-card.component";
+// import { ProjectCardComponent } from './project-card.component';
 
-// describe("ProjectCardComponent", () => {
+// describe('ProjectCardComponent', () => {
 //   let component: ProjectCardComponent;
 //   let fixture: ComponentFixture<ProjectCardComponent>;
 
-//   beforeEach(
-//     async(() => {
-//       TestBed.configureTestingModule({
-//         declarations: [ProjectCardComponent]
-//       }).compileComponents();
-//     })
-//   );
+//   beforeEach(async(() => {
+//     TestBed.configureTestingModule({
+//       declarations: [ProjectCardComponent],
+//     }).compileComponents();
+//   }));
 
 //   beforeEach(() => {
 //     fixture = TestBed.createComponent(ProjectCardComponent);
@@ -20,7 +18,7 @@
 //     fixture.detectChanges();
 //   });
 
-//   it("should create", () => {
+//   it('should create', () => {
 //     expect(component).toBeTruthy();
 //   });
 // });
