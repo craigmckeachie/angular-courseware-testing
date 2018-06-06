@@ -2,7 +2,7 @@ import { browser, element, by } from 'protractor';
 import { HomePage } from './home.po';
 
 describe('Home (default)', function() {
-  let expectedHeader = 'Home';
+  const expectedHeader = 'Home';
   beforeEach(function() {
     browser.get('');
   });
@@ -13,7 +13,7 @@ describe('Home (default)', function() {
 
 describe('Home (default) with Page Object', function() {
   let page: HomePage;
-  let expectedHeader = 'Home';
+  const expectedHeader = 'Home';
 
   beforeEach(function() {
     page = new HomePage();

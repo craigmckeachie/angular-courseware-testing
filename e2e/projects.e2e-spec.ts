@@ -1,7 +1,7 @@
 import { ProjectsPage } from './projects.po';
 describe('Projects', function() {
   let page: ProjectsPage;
-  let expectedHeader = 'Home';
+  const expectedHeader = 'Home';
 
   beforeEach(function() {
     page = new ProjectsPage();

@@ -15,7 +15,7 @@ export class ProjectsPage {
   }
 
   updateName(name: string) {
-    let input = this.projectNameInput;
+    const input = this.projectNameInput;
     input.clear().then(() => {
       input.sendKeys(name);
     });
