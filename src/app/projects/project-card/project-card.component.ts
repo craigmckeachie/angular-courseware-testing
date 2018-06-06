@@ -1,11 +1,11 @@
-import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
-import { Project } from "../shared/project.model";
-import { Router } from "@angular/router";
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Project } from '../shared/project.model';
+import { Router } from '@angular/router';
 
 @Component({
-  selector: "app-project-card",
-  templateUrl: "./project-card.component.html",
-  styleUrls: ["./project-card.component.css"]
+  selector: 'app-project-card',
+  templateUrl: './project-card.component.html',
+  styleUrls: ['./project-card.component.css'],
 })
 export class ProjectCardComponent implements OnInit {
   @Input() project = new Project();
@@ -20,7 +20,7 @@ export class ProjectCardComponent implements OnInit {
   getDropdownCssClasses() {
     return {
       dropdown: true,
-      open: this.actionDropdownIsOpen
+      open: this.actionDropdownIsOpen,
     };
   }
 
@@ -40,6 +40,6 @@ export class ProjectCardComponent implements OnInit {
 
   onSelect(project: Project, event) {
     event.preventDefault();
-    this.router.navigate(["/projects", project.id]);
+    this.router.navigate(['/projects', project.id]);
   }
 }
