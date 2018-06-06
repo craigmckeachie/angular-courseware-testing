@@ -1,19 +1,19 @@
-// import { TestBed, inject } from "@angular/core/testing";
+// import { TestBed, inject } from '@angular/core/testing';
 
-// import { ProjectService } from "./project.service";
-// import { HttpClientModule, HttpClient } from "@angular/common/http";
+// import { ProjectService } from './project.service';
+// import { HttpClientModule, HttpClient } from '@angular/common/http';
 
-// describe("ProjectService", () => {
+// describe('ProjectService', () => {
 //   beforeEach(() => {
 //     TestBed.configureTestingModule({
-//       providers: [ProjectService]
+//       providers: [ProjectService],
 //     });
 //   });
 
-//   it(
-//     "should be created",
-//     inject([ProjectService], (service: ProjectService) => {
+//   it('should be created', inject(
+//     [ProjectService],
+//     (service: ProjectService) => {
 //       expect(service).toBeTruthy();
-//     })
-//   );
+//     }
+//   ));
 // });
