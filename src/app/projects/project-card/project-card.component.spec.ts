@@ -1,11 +1,11 @@
-import { async, ComponentFixture, TestBed } from "@angular/core/testing";
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ProjectCardComponent } from "./project-card.component";
-import { DebugElement } from "@angular/core";
-import { Project } from "../shared/project.model";
-import { By } from "@angular/platform-browser";
+import { ProjectCardComponent } from './project-card.component';
+import { DebugElement } from '@angular/core';
+import { Project } from '../shared/project.model';
+import { By } from '@angular/platform-browser';
 
-describe("ProjectCardComponent", () => {
+describe('ProjectCardComponent', () => {
   let component: ProjectCardComponent;
   let fixture: ComponentFixture<ProjectCardComponent>;
 
@@ -14,58 +14,56 @@ describe("ProjectCardComponent", () => {
   let editAnchorDebugElement: DebugElement;
   let expectedProject: Project;
 
-  beforeEach(
-    async(() => {
-      TestBed.configureTestingModule({
-        declarations: [ProjectCardComponent]
-      }).compileComponents();
-    })
-  );
+  beforeEach(async(() => {
+    TestBed.configureTestingModule({
+      declarations: [ProjectCardComponent],
+    }).compileComponents();
+  }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(ProjectCardComponent);
     component = fixture.componentInstance;
 
-    headerElement = fixture.debugElement.query(By.css("h4")).nativeElement;
+    headerElement = fixture.debugElement.query(By.css('h4')).nativeElement;
     projectDetailDivElement = fixture.debugElement.query(
-      By.css("div.project-detail")
+      By.css('div.project-detail')
     ).nativeElement;
 
-    editAnchorDebugElement = fixture.debugElement.query(By.css(".edit-action"));
+    editAnchorDebugElement = fixture.debugElement.query(By.css('.edit-action'));
 
     expectedProject = new Project({
       id: 15,
-      name: "Mission Impossible",
-      description: "This is really hard.",
-      editing: false
+      name: 'Mission Impossible',
+      description: 'This is really hard.',
+      editing: false,
     });
     component.project = expectedProject;
     fixture.detectChanges();
   });
 
-  it("should create", () => {
+  it('should create', () => {
     expect(component).toBeTruthy();
   });
 
-  it("header should have project name", () => {
+  it('header should have project name', () => {
     expect(headerElement.innerText).toEqual(expectedProject.name);
   });
 
-  it("div should have project description", () => {
+  it('div should have project description', () => {
     expect(projectDetailDivElement.textContent).toContain(
       expectedProject.description
     );
   });
 
-  it("should raise edit event when edit clicked", () => {
+  it('should raise edit event when edit clicked', () => {
     let projectBeingEdited: Project;
 
     component.edit.subscribe((project: Project) => {
       projectBeingEdited = project;
     });
 
-    editAnchorDebugElement.triggerEventHandler("click", {
-      preventDefault: () => {}
+    editAnchorDebugElement.triggerEventHandler('click', {
+      preventDefault: () => {},
     });
 
     expect(projectBeingEdited).toBe(expectedProject);
