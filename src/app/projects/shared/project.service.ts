@@ -1,15 +1,15 @@
-import { Injectable } from "@angular/core";
-import { Observable, throwError } from "rxjs";
-import { HttpClient, HttpHeaders } from "@angular/common/http";
-import { catchError, tap } from "rxjs/operators";
-import { HttpErrorResponse } from "@angular/common/http";
+import { Injectable } from '@angular/core';
+import { Observable, throwError } from 'rxjs';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { catchError, tap } from 'rxjs/operators';
+import { HttpErrorResponse } from '@angular/common/http';
 
-import { Project } from "./project.model";
+import { Project } from './project.model';
 
 const httpOptions = {
-  headers: new HttpHeaders({ "Content-Type": "application/json" })
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
 };
-export const PROJECTS_URL = "http://localhost:3000/projects/";
+export const PROJECTS_URL = 'http://localhost:3000/projects/';
 
 @Injectable()
 export class ProjectService {
@@ -24,7 +24,7 @@ export class ProjectService {
     return this.http.get<Project[]>(PROJECTS_URL).pipe(
       catchError((error: HttpErrorResponse) => {
         console.error(error);
-        return throwError("An error occurred loading the projects.");
+        return throwError('An error occurred loading the projects.');
       })
     );
   }
@@ -34,7 +34,7 @@ export class ProjectService {
     return this.http.put<Project>(url, project, httpOptions).pipe(
       catchError((error: HttpErrorResponse) => {
         console.error(error);
-        return throwError("An error occurred updating the project.");
+        return throwError('An error occurred updating the project.');
       })
     );
   }
@@ -44,7 +44,7 @@ export class ProjectService {
     return this.http.delete<Project>(url, httpOptions).pipe(
       catchError((error: HttpErrorResponse) => {
         console.error(error);
-        return throwError("An error occurred deleting the project.");
+        return throwError('An error occurred deleting the project.');
       })
     );
   }
