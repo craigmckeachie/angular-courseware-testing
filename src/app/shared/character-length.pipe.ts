@@ -1,7 +1,7 @@
-import { Pipe, PipeTransform } from "@angular/core";
+import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: "characterLength"
+  name: 'characterLength',
 })
 export class CharacterLengthPipe implements PipeTransform {
   transform(value: string, length: number) {
