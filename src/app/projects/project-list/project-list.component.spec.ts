@@ -1,11 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { ProjectListComponent } from './project-list.component';
-import { NavigationExtras } from '@angular/router/src/router';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ProjectsModule } from '../projects.module';
-import { Router } from '@angular/router';
+import {NavigationExtras, Router} from '@angular/router';
 import { DebugElement } from '@angular/core';
 import { ProjectService } from '../shared/project.service';
 import { of } from 'rxjs';
