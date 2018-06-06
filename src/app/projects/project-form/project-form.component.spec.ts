@@ -8,9 +8,8 @@
 
 //   beforeEach(async(() => {
 //     TestBed.configureTestingModule({
-//       declarations: [ ProjectFormComponent ]
-//     })
-//     .compileComponents();
+//       declarations: [ProjectFormComponent],
+//     }).compileComponents();
 //   }));
 
 //   beforeEach(() => {
