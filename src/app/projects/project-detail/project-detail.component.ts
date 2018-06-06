@@ -1,14 +1,14 @@
-import { Component, OnInit } from "@angular/core";
-import { ActivatedRoute } from "@angular/router";
-import { Subscription } from "rxjs";
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Subscription } from 'rxjs';
 
-import { Project } from "../shared/project.model";
-import { ProjectService } from "../shared/project.service";
+import { Project } from '../shared/project.model';
+import { ProjectService } from '../shared/project.service';
 
 @Component({
-  selector: "app-project-detail",
-  templateUrl: "./project-detail.component.html",
-  styleUrls: ["./project-detail.component.css"]
+  selector: 'app-project-detail',
+  templateUrl: './project-detail.component.html',
+  styleUrls: ['./project-detail.component.css'],
 })
 export class ProjectDetailComponent implements OnInit {
   project: Project;
@@ -27,8 +27,8 @@ export class ProjectDetailComponent implements OnInit {
 
   getProject() {
     this.paramsSubscription = this.route.params.subscribe(params => {
-      if (params["id"] != undefined) {
-        let id = +params["id"];
+      if (params['id'] != undefined) {
+        let id = +params['id'];
         this.subscription = this.projectService
           .find(id)
           .subscribe(p => (this.project = p), e => (this.errorMessage = e));
