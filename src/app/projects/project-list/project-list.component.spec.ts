@@ -8,7 +8,7 @@ import { ProjectsModule } from '../projects.module';
 import { Router } from '@angular/router';
 import { DebugElement } from '@angular/core';
 import { ProjectService } from '../shared/project.service';
-import { of } from 'rxjs/observable/of';
+import { of } from 'rxjs';
 import { Project } from '../shared/project.model';
 import Spy = jasmine.Spy;
 
